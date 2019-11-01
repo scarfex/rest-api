@@ -1,0 +1,31 @@
+{
+    "name": "rest-api",
+    "version": "1.0.0",
+    "description": "Example rest api with MongoDB",
+    "main": "index.js",
+    "scripts": {
+        "start": "nodemon app.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/scarfex/rest-api.git"
+    },
+    "keywords": [
+        "rest",
+        "api",
+        "expressjs",
+        "mongodb",
+        "nodejs"
+    ],
+    "author": "Paul Bernard",
+    "license": "Apache-2.0",
+    "bugs": {
+        "url": "https://github.com/scarfex/rest-api/issues"
+    },
+    "homepage": "https://github.com/scarfex/rest-api#readme",
+    "dependencies": {
+        "express": "^4.17.1",
+        "mongoose": "^5.7.7",
+        "nodemon": "^1.19.4"
+    }
+}
