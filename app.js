@@ -3,13 +3,14 @@ const app = express();
 const mongoose = require("mongoose");
 require("dotenv/config");
 
+//Import Routes
+const postsRoute = require("./routes/posts");
+
+app.use("/posts", postsRoute);
+
 //ROUTES
 app.get("/", (req, res) => {
     res.send("Home Screen");
-});
-
-app.get("/posts", (req, res) => {
-    res.send("Posts Screen");
 });
 
 //Connect to DB
