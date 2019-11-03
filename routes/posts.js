@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const Post = require("../models/Post");
 
+//All Posts
 router.get("/", async (req, res) => {
     try {
         const posts = await Post.find();
@@ -11,6 +12,17 @@ router.get("/", async (req, res) => {
     }
 });
 
+//Specific Post
+router.get("/:postID", async (req, res) => {
+    try {
+        const post = await Post.findById(req.params.postID);
+        res.json(post);
+    } catch (err) {
+        res.json({ message: err });
+    }
+});
+
+//Submit Post
 router.post("/", async (req, res) => {
     const post = new Post({
         title: req.body.title,
@@ -25,4 +37,5 @@ router.post("/", async (req, res) => {
         res.json({ message: err });
     }
 });
+
 module.exports = router;
